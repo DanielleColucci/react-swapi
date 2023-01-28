@@ -2,7 +2,9 @@ import { Link } from "react-router-dom"
 
 const Header = () => {
   return (
-    <Link to='/'>STAR WARS STARSHIPS</Link>
+    <div className="header">
+      <Link to='/'>STAR WARS STARSHIPS</Link>
+    </div>
   )
 }
 export default Header

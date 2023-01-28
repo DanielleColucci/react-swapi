@@ -14,25 +14,27 @@ const StarshipList = () => {
   }, [])
 
   return (
-    <>
-      <h1>Starships</h1>
-      {starships.length ? 
-        <>
-          {starships.map(starship => (
-            <div key={starship.name}>
-              <Link 
-                to={`/starship/${starship.url.split('/')[5]}`} 
-                state={starships}
-              >
-                {starship.name}
-              </Link>
-            </div>
-          ))}
-        </>
-        :
-        <h3>Loading starships...</h3>
-      }
-    </>
+    <div className="list">
+      <h1>Starship List</h1>
+      <div className="list-container">
+        {starships.length ? 
+          <>
+            {starships.map(starship => (
+              <div className="starship-card" key={starship.name}>
+                <Link 
+                  to={`/starship/${starship.url.split('/')[5]}`} 
+                  state={starships}
+                >
+                  {starship.name}
+                </Link>
+              </div>
+            ))}
+          </>
+          :
+          <h3>Loading starships...</h3>
+        }
+      </div>
+    </div>
   )
 }
 
